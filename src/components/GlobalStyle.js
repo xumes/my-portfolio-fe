@@ -12,7 +12,6 @@ html{
     @media (max-width: 1700px){
         font-size: 75%;
     }
-
 }
 
 body{
@@ -20,6 +19,7 @@ body{
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
+
 button{
     font-weight: bold;
     font-size: 1.1.rem;
@@ -45,7 +45,6 @@ button{
     h4{
         font-weight: bold;
         font-size: 2rem;
-
     }
     a{
         font-size: 1.1rem;
@@ -60,7 +59,6 @@ button{
         font-size: 1.4rem;
         line-height: 150%;
     }
-
 `;
 
 export default GlobalStyle;

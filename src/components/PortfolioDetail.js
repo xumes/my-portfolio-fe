@@ -3,8 +3,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
-//IMAGES
-
 
 const PortfolioDetail = ({ pathId }) => {
   const history = useHistory();
@@ -107,9 +105,9 @@ const Info = styled(motion.div)`
   }
 `;
 const Rating = styled(motion.div)`
-    h3{
-        color: #696969;
-     }
+  h3{
+      color: #696969;
+    }
 `
 const Platforms = styled(motion.div)`
   display: flex;
