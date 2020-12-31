@@ -1,36 +1,45 @@
 import React from "react";
-import home1 from "../img/home1.png";
+
+// Images and icons
+import profile from "../img/profile.jpg";
 import { About, Description, Image, Hide } from "../styles";
+
 //Framer Motion
 import { motion } from "framer-motion";
-import { titleAnim, fade, photoAnim } from "../animation";
+import { titleAnim, fade, photoAnim, scrollReveal } from "../animation";
 import Wave from "./Wave";
+import { useScroll } from "./useScroll";
 
 const AboutSection = () => {
+  const [element, controls] = useScroll();
   return (
-    <About>
+    <About
+      variants={scrollReveal}
+      animate={controls}
+      initial="hidden"
+      ref={element}>
       <Description>
         <motion.div>
           <Hide>
-            <motion.h2 variants={titleAnim}>We work to make</motion.h2>
+            <motion.h2 variants={titleAnim}>Reginaldo Santos</motion.h2>
           </Hide>
           <Hide>
             <motion.h2 variants={titleAnim}>
-              your <span>dreams</span> come
+              <span>Software Engineer</span>
             </motion.h2>
           </Hide>
-          <Hide>
-            <motion.h2 variants={titleAnim}>true.</motion.h2>
-          </Hide>
+
         </motion.div>
         <motion.p variants={fade}>
-          Contact us for any photography or videography ideas that you have. We
-          have professionals with amazing skills.
+        I'm a software engineer who is passionate about making code more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include chatbots, the MERN (Mongo, Express, React and Node) stack and PHP.
+I am currently working on an awesome startup called <span>Proposify</span>.
         </motion.p>
-        <motion.button variants={fade}>Contact Us</motion.button>
+        <motion.button variants={fade}>Contact Me</motion.button>
       </Description>
       <Image>
-        <motion.img variants={photoAnim} src={home1} alt="guy with a camera" />
+        <motion.div variants={photoAnim}>
+          <img alt="Reginaldo Santos" src={profile} />
+        </motion.div>
       </Image>
       <Wave />
     </About>

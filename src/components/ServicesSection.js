@@ -1,13 +1,13 @@
 import React from "react";
-//Import Icons
-import clock from "../img/clock.svg";
-import diaphragm from "../img/diaphragm.svg";
-import money from "../img/money.svg";
-import teamwork from "../img/teamwork.svg";
-import home2 from "../img/home2.png";
-//Styles
-import { About, Description, Image } from "../styles";
+import ReactPlayer from 'react-player'
 import styled from "styled-components";
+
+//Import Icons
+import { IconContext } from 'react-icons'
+import { FaLaptopCode, FaGraduationCap, FaImages, FaGithubSquare } from 'react-icons/fa';
+
+//Styles and animations
+import { About, Description, Image } from "../styles";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
 
@@ -22,41 +22,47 @@ const ServicesSection = () => {
     >
       <Description>
         <h2>
-          High <span>quality</span> services
+          Things I <span>do</span>
         </h2>
         <Cards>
-          <Card>
-            <div className="icon">
-              <img alt="icon" src={clock} />
-              <h3>Efficient</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className="icon">
-              <img alt="icon" src={teamwork} />
-              <h3>Teamwork</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className="icon">
-              <img alt="icon" src={diaphragm} />
-              <h3>Diaphragm</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
-          <Card>
-            <div className="icon">
-              <img alt="icon" src={money} />
-              <h3>Affordable</h3>
-            </div>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </Card>
+          <IconContext.Provider value={{ color: "#416CD5", size:"5rem"}}>
+            <Card>
+              <div className="icon">
+                <FaLaptopCode />
+                <h3>Portfolio</h3>
+              </div>
+              <p>Check my work on my Portfolio.</p>
+            </Card>
+            <Card>
+              <div className="icon">
+                <FaGraduationCap />
+                <h3>Courses</h3>
+              </div>
+              <p>Courses at Udemy and other platforms (Portuguese only).</p>
+            </Card>
+            <Card>
+              <div className="icon">
+                <FaImages />
+                <h3>Hobbies</h3>
+              </div>
+              <p>Some photos and videos of my experience in Halifax, Canada.</p>
+            </Card>
+            <Card>
+              <div className="icon">
+                <FaGithubSquare />
+                <h3>My code</h3>
+              </div>
+              <p>Check my Github Portfolio.</p>
+            </Card>
+          </IconContext.Provider>
         </Cards>
       </Description>
       <Image>
-        <img alt="camera" src={home2} />
+        <ReactPlayer
+              url="https://youtu.be/ClvFciFWSbo"
+              volume="0.1"
+              loop="true"
+          />
       </Image>
     </Services>
   );
@@ -83,6 +89,10 @@ const Card = styled.div`
   .icon {
     display: flex;
     align-items: center;
+    img{
+      fill: blue;
+    }
+
     h3 {
       margin-left: 1rem;
       background: white;

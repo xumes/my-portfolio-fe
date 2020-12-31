@@ -20,6 +20,7 @@ export const Description = styled.div`
   z-index: 2;
   h2 {
     font-weight: lighter;
+    color: yellow;
   }
   @media (max-width: 1300px) {
     padding: 0;
@@ -34,7 +35,7 @@ export const Image = styled.div`
   overflow: hidden;
   img {
     width: 100%;
-    height: 80vh;
+    height: 75;
     object-fit: cover;
   }
 `;
