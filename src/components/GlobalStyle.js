@@ -18,6 +18,7 @@ body{
     background: #1b1b1b;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+    text-decoration: none;
 }
 
 button{
@@ -44,7 +45,8 @@ button{
     }
     h4{
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.2rem;
+        color: lightgrey;
     }
     a{
         font-size: 1.1rem;

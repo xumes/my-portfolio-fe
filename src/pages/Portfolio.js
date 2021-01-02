@@ -7,83 +7,43 @@ import PortfolioDetail from '../components/PortfolioDetail';
 
 //Animations
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-import {pageAnimation} from "../animation";
-import { useScroll } from "../components/useScroll";
+import {fade} from "../animation";
 import ScrollTop from "../components/ScrollTop";
+
+//Temp
+import {data} from '../fakedata';
 
 const Portfolio = () => {
   //get the current location
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
 
-  const [element, controls] = useScroll();
-  const [element2, controls2] = useScroll();
+
   return (
     <PortfolioList
-      style={{ background: "#fff" }}
-      exit="exit"
-      variants={pageAnimation}
-      initial="hidden"
-      animate="show"
+      variants={fade} initial="hidden" animate="show"
     >
 
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {pathId && <PortfolioDetail pathId={pathId} />}
         </AnimatePresence>
-
-        <h4>My portfolio</h4>
+        <Hide>
         <Cards>
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="123"
-              image="img"
-              key= "123"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="456"
-              image="img"
-              key= "456"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="789"
-              image="img"
-              key= "789"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="87"
-              image="img"
-              key= "098"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="87"
-              image="img"
-              key= "123"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="76"
-              image="img"
-              key= "76"
-            />
-            <Card
-              name="Meu projeto"
-              released="2020-12-30"
-              id="54"
-              image="img"
-              key= "54"
-            />
+          {data && data.map(project => {
+            return (
+              <Card
+                name={project.name}
+                released={project.released}
+                id={project.id}
+                description= {project.shortDescription}
+                image={project.image}
+                key= {project.id}
+              />
+              )
+          })}
         </Cards>
+        </Hide>
       </AnimateSharedLayout>
 
       <ScrollTop />

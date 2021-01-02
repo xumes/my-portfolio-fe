@@ -4,53 +4,65 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 
+//Logo Languages
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+//Temp
+import {data} from '../fakedata';
+
 const PortfolioDetail = ({ pathId }) => {
   const history = useHistory();
+
+  const result = data.filter( item => pathId === item.id )[0];
+  console.log("result is", result)
 
   //Exit Detail
   const exitDetailHander = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
       document.body.style.overflow = "auto";
-      history.push("/");
+      history.push("/portfolio");
     }
   };
 
   return (
     <>
+    {pathId && (
         <CardShadow className="shadow" onClick={exitDetailHander}>
           <Detail layoutId={pathId}>
             <Stats>
-              <Rating>
-                <Title layoutId={`title ${pathId}`}>Nome deve aparecer aqui</Title>
-                <h3>Rating: </h3>
-
-              </Rating>
+              <div>
+                <Title layoutId={`title ${pathId}`}>{result.name}</Title>
+                <DescriptionShort>
+                  <p>{result.shortDescription}</p>
+                 </DescriptionShort>
+              </div>
               <Info>
-                <h3>Platforms</h3>
-                {/* <Platforms>
-                  {game.platforms.map((data) => (
-                    <img
-                      alt={data.platform.name}
-                      key={data.platform.id}
-                      src={data.platform.name}
-                    ></img>
-                  ))}
-                </Platforms> */}
+                <h3>Languages</h3>
+                <Languages>
+                  { result.languages && result.languages.map(language => {
+                    return (
+                      <Language key={language.name}>
+                        <FontAwesomeIcon icon={[language.type, language.icon]} size="4x" /> {language.name}
+                      </Language>
+                    )
+                  })}
+                </Languages>
               </Info>
             </Stats>
             <Description>
-              <p>Bla Bla Bla</p>
+              <p>{result.fullDescription}</p>
             </Description>
+            <motion.img src={result.image} layoutId={`image ${pathId}`} />
           </Detail>
         </CardShadow>
+    )}
     </>
   );
 };
 
 const CardShadow = styled(motion.div)`
   width: 100%;
-  padding: 5rem 10rem;
   min-height: 100vh;
   overflow-y: scroll;
   background: rgba(0, 0, 0, 0.5);
@@ -73,61 +85,67 @@ const Detail = styled(motion.div)`
   width: 80%;
   min-height: 80vh;
   border-radius: 1rem;
-  padding: 2rem 5rem;
   background: white;
   position: absolute;
   left: 10%;
   top: 15%;
-  color: black;
+  margin-bottom: 10%;
   z-index: 10;
   img {
     width: 100%;
+    object-fit: cover;
   }
 `;
 
 const Stats = styled(motion.div)`
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  img {
-    width: 2rem;
-    height: 2rem;
-    display: inline;
-  }
-  h3: {
-    color: black;
-  }
+  padding: 1rem 5rem;
 `;
+
 const Info = styled(motion.div)`
   text-align: center;
+  min-width: 300px;
   h3{
     color: #696969;
   }
 `;
-const Rating = styled(motion.div)`
-  h3{
-      color: #696969;
-    }
-`
-const Platforms = styled(motion.div)`
-  display: flex;
-  justify-content: space-evenly;
+
+const Languages = styled(motion.div)`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45px, 1fr));
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 0.1rem;
+  padding-top: 1rem;
+  svg {
+    color: #416CD5;
+  }
   img {
     margin-left: 3rem;
   }
 `;
-const Title = styled(motion.h3)`
+
+const Language = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #416CD5;
+`;
+
+const Title = styled(motion.h2)`
     color: #696969;
 `
-const Media = styled(motion.div)`
-  margin-top: 5rem;
-  img {
-    width: 100%;
+
+const Description = styled(motion.div)`
+  padding: 2rem 5rem;
+  p {
+    color: black;
   }
 `;
 
-const Description = styled(motion.div)`
-  margin: 5rem 0rem;
-`;
+const DescriptionShort = styled(Description)`
+  padding: 0;
+`
 
 export default PortfolioDetail;

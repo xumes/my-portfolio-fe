@@ -4,7 +4,10 @@ import styled from "styled-components";
 
 //Import Icons
 import { IconContext } from 'react-icons'
-import { FaLaptopCode, FaGraduationCap, FaImages, FaGithubSquare } from 'react-icons/fa';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 //Styles and animations
 import { About, Description, Image } from "../styles";
@@ -28,28 +31,28 @@ const ServicesSection = () => {
           <IconContext.Provider value={{ color: "#416CD5", size:"5rem"}}>
             <Card>
               <div className="icon">
-                <FaLaptopCode />
+                <FontAwesomeIcon icon={faLaptopCode} size="5x" />
                 <h3>Portfolio</h3>
               </div>
               <p>Check my work on my Portfolio.</p>
             </Card>
             <Card>
               <div className="icon">
-                <FaGraduationCap />
+                <FontAwesomeIcon icon={faGraduationCap} size="5x" />
                 <h3>Courses</h3>
               </div>
               <p>Courses at Udemy and other platforms (Portuguese only).</p>
             </Card>
             <Card>
               <div className="icon">
-                <FaImages />
+              <FontAwesomeIcon icon={faImages} size="5x" />
                 <h3>Hobbies</h3>
               </div>
               <p>Some photos and videos of my experience in Halifax, Canada.</p>
             </Card>
             <Card>
               <div className="icon">
-                <FaGithubSquare />
+              <FontAwesomeIcon icon={faGithubSquare}  size="5x" />
                 <h3>My code</h3>
               </div>
               <p>Check my Github Portfolio.</p>
@@ -60,8 +63,6 @@ const ServicesSection = () => {
       <Image>
         <ReactPlayer
               url="https://youtu.be/ClvFciFWSbo"
-              volume="0.1"
-              loop="true"
           />
       </Image>
     </Services>
