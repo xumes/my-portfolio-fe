@@ -14,7 +14,6 @@ const PortfolioDetail = ({ pathId }) => {
   const history = useHistory();
 
   const result = data.filter( item => pathId === item.id )[0];
-  console.log("result is", result)
 
   //Exit Detail
   const exitDetailHander = (e) => {
