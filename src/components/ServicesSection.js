@@ -60,11 +60,13 @@ const ServicesSection = () => {
           </IconContext.Provider>
         </Cards>
       </Description>
-      <Image>
+      <Video>
         <ReactPlayer
-              url="https://youtu.be/ClvFciFWSbo"
-          />
-      </Image>
+          width="100%"
+          url="https://youtu.be/ClvFciFWSbo"
+        />
+        </Video>
+
     </Services>
   );
 };
@@ -103,6 +105,13 @@ const Card = styled.div`
       padding: 1rem;
     }
   }
+`;
+
+const Video = styled.div`
+   z-index: 2;
+  flex: 1;
+  overflow: hidden;
+
 `;
 
 export default ServicesSection;
