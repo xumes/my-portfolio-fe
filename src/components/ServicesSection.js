@@ -1,25 +1,24 @@
-import React from "react";
+import React from 'react'
 import ReactPlayer from 'react-player'
-import styled from "styled-components";
+import styled from 'styled-components'
 
-//Import Icons
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+// Import Icons
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-//Styles and animations
-import { About, Description } from "../styles";
-import { scrollReveal } from "../animation";
-import { useScroll } from "./useScroll";
+// Styles and animations
+import { About, Description } from '../styles'
+import { scrollReveal } from '../animation'
+import { useScroll } from './useScroll'
 
 const ServicesSection = () => {
-  const [element, controls] = useScroll();
+  const [element, controls] = useScroll()
   return (
     <Services
       variants={scrollReveal}
       animate={controls}
-      initial="hidden"
+      initial='hidden'
       ref={element}
     >
       <Description>
@@ -27,46 +26,45 @@ const ServicesSection = () => {
           Things I <span>do</span>
         </h2>
         <Cards>
-            <Card>
-              <div className="icon">
-                <FontAwesomeIcon icon={faLaptopCode} size="5x" />
-                <h3>Portfolio</h3>
-              </div>
-              <p>Check my work on my Portfolio.</p>
-            </Card>
-            <Card>
-              <div className="icon">
-                <FontAwesomeIcon icon={faGraduationCap} size="5x" />
-                <h3>Courses</h3>
-              </div>
-              <p>Courses at Udemy and other platforms (Portuguese only).</p>
-            </Card>
-            <Card>
-              <div className="icon">
-              <FontAwesomeIcon icon={faImages} size="5x" />
-                <h3>Hobbies</h3>
-              </div>
-              <p>Some photos and videos of my experience in Halifax, Canada.</p>
-            </Card>
-            <Card>
-              <div className="icon">
-              <FontAwesomeIcon icon={faGithubSquare}  size="5x" />
-                <h3>My code</h3>
-              </div>
-              <p>Check my Github Portfolio.</p>
-            </Card>
+          <Card>
+            <div className='icon'>
+              <FontAwesomeIcon icon={faLaptopCode} size='5x' />
+              <h3>Portfolio</h3>
+            </div>
+            <p>Check my work on my Portfolio.</p>
+          </Card>
+          <Card>
+            <div className='icon'>
+              <FontAwesomeIcon icon={faGraduationCap} size='5x' />
+              <h3>Courses</h3>
+            </div>
+            <p>Courses at Udemy and other platforms (Portuguese only).</p>
+          </Card>
+          <Card>
+            <div className='icon'>
+              <FontAwesomeIcon icon={faImages} size='5x' />
+              <h3>Hobbies</h3>
+            </div>
+            <p>Some photos and videos of my experience in Halifax, Canada.</p>
+          </Card>
+          <Card>
+            <div className='icon'>
+              <FontAwesomeIcon icon={faGithubSquare} size='5x' />
+              <h3>My code</h3>
+            </div>
+            <p>Check my Github Portfolio.</p>
+          </Card>
         </Cards>
       </Description>
       <Video>
         <ReactPlayer
-          width="100%"
-          url="https://youtu.be/ClvFciFWSbo"
+          width='100%'
+          url='https://youtu.be/ClvFciFWSbo'
         />
-        </Video>
-
+      </Video>
     </Services>
-  );
-};
+  )
+}
 
 const Services = styled(About)`
   h2 {
@@ -76,7 +74,7 @@ const Services = styled(About)`
     width: 70%;
     padding: 2rem 0rem 4rem 0rem;
   }
-`;
+`
 
 const Cards = styled.div`
   display: flex;
@@ -84,7 +82,7 @@ const Cards = styled.div`
   @media (max-width: 1300px) {
     justify-content: center;
   }
-`;
+`
 
 const Card = styled.div`
   flex-basis: 20rem;
@@ -94,7 +92,6 @@ const Card = styled.div`
     img{
       fill: blue;
     }
-
     h3 {
       margin-left: 1rem;
       background: white;
@@ -102,13 +99,13 @@ const Card = styled.div`
       padding: 1rem;
     }
   }
-`;
+`
 
 const Video = styled.div`
-   z-index: 2;
+  z-index: 2;
   flex: 1;
   overflow: hidden;
 
-`;
+`
 
-export default ServicesSection;
+export default ServicesSection

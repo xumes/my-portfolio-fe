@@ -1,24 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const ContactForm = () => {
-    return (
-        <Form id="contact-form"  method="POST">
-            <Input>
-                <label htmlFor="name">Name</label>
-                <input type="text" />
-            </Input>
-            <Input>
-                <label htmlFor="exampleInputEmail1">Email address</label>
-                <input type="email" aria-describedby="emailHelp" />
-            </Input>
-            <Input>
-                <label htmlFor="message">Message</label>
-                <textarea rows="5"></textarea>
-            </Input>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </Form>
-    )
+  return (
+    <Form id='contact-form' method='POST'>
+      <Input>
+        <label htmlFor='name'>Name</label>
+        <input type='text' />
+      </Input>
+      <Input>
+        <label htmlFor='exampleInputEmail1'>Email address</label>
+        <input type='email' aria-describedby='emailHelp' />
+      </Input>
+      <Input>
+        <label htmlFor='message'>Message</label>
+        <textarea rows='5' />
+      </Input>
+      <button type='submit' className='btn btn-primary'>Submit</button>
+    </Form>
+  )
 }
 
 const Input = styled.div`
@@ -61,7 +61,7 @@ const Input = styled.div`
         background-color: #416CD5;
         color: yellow;
     }
-`;
+`
 
 const Form = styled.form`
     button{
@@ -71,7 +71,6 @@ const Form = styled.form`
         padding: 4rem;
         font-size: 1rem;
     }
-`;
+`
 
 export default ContactForm
-

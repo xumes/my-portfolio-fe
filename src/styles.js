@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { motion } from "framer-motion";
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
 export const About = styled(motion.div)`
   min-height: 90vh;
@@ -13,7 +13,7 @@ export const About = styled(motion.div)`
     padding: 2rem 2rem;
     text-align: center;
   }
-`;
+`
 export const Description = styled.div`
   flex: 1;
   padding-right: 5rem;
@@ -28,7 +28,7 @@ export const Description = styled.div`
       margin: 2rem 0rem 5rem 0rem;
     }
   }
-`;
+`
 export const Image = styled.div`
   z-index: 2;
   flex: 1;
@@ -38,8 +38,8 @@ export const Image = styled.div`
     height: 75;
     object-fit: cover;
   }
-`;
+`
 
 export const Hide = styled.div`
   overflow: hidden;
-`;
+`

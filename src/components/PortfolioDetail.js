@@ -1,48 +1,48 @@
-import React from "react";
-//Styling and Animation
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import { useHistory } from "react-router-dom";
+import React from 'react'
+// Styling and Animation
+import styled from 'styled-components'
+import { motion } from 'framer-motion'
+import { useHistory } from 'react-router-dom'
 
-//Logo Languages
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// Logo Languages
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-//Temp
-import {data} from '../fakedata';
+// Temp
+import { data } from '../fakedata'
 
 const PortfolioDetail = ({ pathId }) => {
-  const history = useHistory();
+  const history = useHistory()
 
-  const result = data.filter( item => pathId === item.id )[0];
+  const result = data.filter(item => pathId === item.id)[0]
 
-  //Exit Detail
+  // Exit Detail
   const exitDetailHander = (e) => {
-    const element = e.target;
-    if (element.classList.contains("shadow")) {
-      document.body.style.overflow = "auto";
-      history.push("/portfolio");
+    const element = e.target
+    if (element.classList.contains('shadow')) {
+      document.body.style.overflow = 'auto'
+      history.push('/portfolio')
     }
-  };
+  }
 
   return (
     <>
-    {pathId && (
-        <CardShadow className="shadow" onClick={exitDetailHander}>
+      {pathId && (
+        <CardShadow className='shadow' onClick={exitDetailHander}>
           <Detail layoutId={pathId.toString()}>
             <Stats>
               <div>
                 <Title layoutId={`title ${pathId}`}>{result.name}</Title>
                 <DescriptionShort>
                   <p>{result.shortDescription}</p>
-                 </DescriptionShort>
+                </DescriptionShort>
               </div>
               <Info>
                 <h3>Languages [{pathId.toString()}]</h3>
                 <Languages>
-                  { result.languages && result.languages.map(language => {
+                  {result.languages && result.languages.map(language => {
                     return (
                       <Language key={language.name}>
-                        <FontAwesomeIcon icon={[language.type, language.icon]} size="4x" /> {language.name}
+                        <FontAwesomeIcon icon={[language.type, language.icon]} size='4x' /> {language.name}
                       </Language>
                     )
                   })}
@@ -55,10 +55,10 @@ const PortfolioDetail = ({ pathId }) => {
             <motion.img src={result.image} layoutId={`image ${pathId}`} />
           </Detail>
         </CardShadow>
-    )}
+      )}
     </>
-  );
-};
+  )
+}
 
 const CardShadow = styled(motion.div)`
   width: 100%;
@@ -78,7 +78,7 @@ const CardShadow = styled(motion.div)`
   &::-webkit-scrollbar-track {
     background: white;
   }
-`;
+`
 
 const Detail = styled(motion.div)`
   width: 80%;
@@ -97,13 +97,13 @@ const Detail = styled(motion.div)`
   @media (max-width: 1300px) {
     top: 28%;
   }
-`;
+`
 
 const Stats = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   padding: 1rem 5rem;
-`;
+`
 
 const Info = styled(motion.div)`
   text-align: center;
@@ -111,7 +111,7 @@ const Info = styled(motion.div)`
   h3{
     color: #696969;
   }
-`;
+`
 
 const Languages = styled(motion.div)`
   width: 100%;
@@ -126,14 +126,14 @@ const Languages = styled(motion.div)`
   img {
     margin-left: 3rem;
   }
-`;
+`
 
 const Language = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #416CD5;
-`;
+`
 
 const Title = styled(motion.h2)`
     color: #696969;
@@ -144,10 +144,10 @@ const Description = styled(motion.div)`
   p {
     color: black;
   }
-`;
+`
 
 const DescriptionShort = styled(Description)`
   padding: 0;
 `
 
-export default PortfolioDetail;
+export default PortfolioDetail

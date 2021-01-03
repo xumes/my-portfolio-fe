@@ -1,53 +1,52 @@
-import React from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import React from 'react'
+import styled from 'styled-components'
+import { Link, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 const Nav = () => {
   const menuOptions = {
     about: '<About Me />',
     portfolio: '<Portfolio />',
     contact: '<Contact Me />'
-  };
+  }
 
-  const { pathname } = useLocation();
+  const { pathname } = useLocation()
   return (
     <StyledNav>
       <h1>
-        <Link id="logo" to="/">
+        <Link id='logo' to='/'>
           Reginaldo Santos
         </Link>
       </h1>
       <ul>
         <li>
-          <Link to="/">{menuOptions.about}</Link>
+          <Link to='/'>{menuOptions.about}</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/" ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/' ? '50%' : '0%' }}
           />
         </li>
         <li>
-          <Link to="/portfolio">{menuOptions.portfolio}</Link>
+          <Link to='/portfolio'>{menuOptions.portfolio}</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width:  pathname.startsWith( "/portfolio" )  ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname.startsWith('/portfolio') ? '50%' : '0%' }}
           />
         </li>
         <li>
-          <Link to="/contact">{menuOptions.contact}</Link>
+          <Link to='/contact'>{menuOptions.contact}</Link>
           <Line
             transition={{ duration: 0.75 }}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname === "/contact" ? "50%" : "0%" }}
+            initial={{ width: '0%' }}
+            animate={{ width: pathname === '/contact' ? '50%' : '0%' }}
           />
         </li>
       </ul>
     </StyledNav>
-  );
-};
+  )
+}
 
 const StyledNav = styled.nav`
   min-height: 10vh;
@@ -97,7 +96,7 @@ const StyledNav = styled.nav`
       }
     }
   }
-`;
+`
 
 const Line = styled(motion.div)`
   height: 0.3rem;
@@ -109,6 +108,6 @@ const Line = styled(motion.div)`
   @media (max-width: 1300px) {
     left: 0%;
   }
-`;
+`
 
-export default Nav;
+export default Nav
