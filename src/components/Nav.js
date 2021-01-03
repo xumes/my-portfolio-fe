@@ -76,7 +76,7 @@ const StyledNav = styled.nav`
     position: relative;
     font-family: "Jura", sans-serif;
     a{
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
 
   }
