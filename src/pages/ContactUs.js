@@ -78,7 +78,6 @@ const ContactStyle = styled(motion.div)`
 `;
 
 const Title = styled.div`
-  padding: 0rem 4rem;
   margin-bottom: 4rem;
   h2 {
     color: white;
