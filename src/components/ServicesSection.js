@@ -105,7 +105,6 @@ const Video = styled.div`
   z-index: 2;
   flex: 1;
   overflow: hidden;
-
 `
 
 export default ServicesSection

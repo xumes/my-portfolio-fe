@@ -29,7 +29,6 @@ const AboutSection = () => {
               <span>Software Engineer</span>
             </motion.h2>
           </Hide>
-
         </motion.div>
         <motion.p variants={fade}>
           I'm a software engineer who is passionate about making code more accessible, creating technology to elevate people, and building community. Some technologies I enjoy working with include chatbots, the MERN (Mongo, Express, React and Node) stack and PHP.
