@@ -33,31 +33,31 @@ const ContactUs = () => {
       <Areas>
         <ContactArea>
           <Hide>
-            <Social variants={titleAnim}>
+            <Social variants={titleAnim} href="http://github.com/xumes" target="_blank">
               <FontAwesomeIcon icon={faGithubSquare} size="4x" />
               <h3>github.com/xumes</h3>
             </Social>
           </Hide>
           <Hide>
-            <Social variants={titleAnim}>
+            <Social variants={titleAnim} href="http://linkedin.com/in/reginaldosantos" target="_blank">
               <FontAwesomeIcon icon={faLinkedin} size="4x" />
               <h3>linkedin.com/in/reginaldosantos</h3>
             </Social>
           </Hide>
           <Hide>
-            <Social variants={titleAnim}>
+            <Social variants={titleAnim} href="http://youtube.com/c/ReginaldoSantosBR" target="_blank">
               <FontAwesomeIcon icon={faYoutubeSquare} size="4x" />
               <h3>youtube.com/c/ReginaldoSantosBR</h3>
             </Social>
           </Hide>
           <Hide>
-            <Social variants={titleAnim}>
+            <Social variants={titleAnim} href="http://udemy.com/user/reginaldo-marcelo-dos-santos-2" target="_blank">
               <FontAwesomeIcon icon={faGraduationCap} size="3x" />
               <h3>udemy.com/user/reginaldo-marcelo-dos-santos-2</h3>
             </Social>
           </Hide>
           <Hide>
-            <Social variants={titleAnim}>
+            <Social variants={titleAnim} href="http://t.me/reginaldosantosbr" target="_blank">
               <FontAwesomeIcon icon={faTelegram} size="4x" />
               <h3>t.me/reginaldosantosbr</h3>
             </Social>
@@ -119,14 +119,14 @@ const FormArea = styled(motion.div)`
   }
 `;
 
-const Social = styled(motion.div)`
+const Social = styled(motion.a)`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   border-radius: 15px 50px;
-
   padding-left: 2rem;
+  text-decoration: none;
   &:hover{
     background: yellow;
     cursor: pointer;
@@ -135,6 +135,7 @@ const Social = styled(motion.div)`
     color: grey;
     margin: 2rem;
   }
+  color: inherit;
 `;
 
 //Frame Animation
