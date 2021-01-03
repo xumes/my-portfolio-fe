@@ -3,14 +3,13 @@ import ReactPlayer from 'react-player'
 import styled from "styled-components";
 
 //Import Icons
-import { IconContext } from 'react-icons'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 //Styles and animations
-import { About, Description, Image } from "../styles";
+import { About, Description } from "../styles";
 import { scrollReveal } from "../animation";
 import { useScroll } from "./useScroll";
 
@@ -28,7 +27,6 @@ const ServicesSection = () => {
           Things I <span>do</span>
         </h2>
         <Cards>
-          <IconContext.Provider value={{ color: "#416CD5", size:"5rem"}}>
             <Card>
               <div className="icon">
                 <FontAwesomeIcon icon={faLaptopCode} size="5x" />
@@ -57,7 +55,6 @@ const ServicesSection = () => {
               </div>
               <p>Check my Github Portfolio.</p>
             </Card>
-          </IconContext.Provider>
         </Cards>
       </Description>
       <Video>
