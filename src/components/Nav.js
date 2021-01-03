@@ -78,7 +78,6 @@ const StyledNav = styled.nav`
     a{
       font-size: 1.3rem;
     }
-
   }
   @media (max-width: 1300px) {
     flex-direction: column;
