@@ -1,4 +1,10 @@
 import React from "react";
+
+import { faGithubSquare, faLinkedin, faYoutubeSquare, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import ContactForm from '../components/ContactForm';
 //Animations
 import { motion } from "framer-motion";
 import { pageAnimation, titleAnim, sliderContainer,
@@ -12,7 +18,6 @@ const ContactUs = () => {
       variants={pageAnimation}
       initial="hidden"
       animate="show"
-      style={{ background: "#fff" }}
     >
       <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
@@ -22,29 +27,46 @@ const ContactUs = () => {
       </motion.div>
       <Title>
         <Hide>
-          <motion.h2 variants={titleAnim}>Get in touch.</motion.h2>
+          <motion.h2 variants={titleAnim}>Get in <span>touch</span>.</motion.h2>
         </Hide>
       </Title>
-      <div>
-        <Hide>
-          <Social variants={titleAnim}>
-            <Circle />
-            <h2>Send Us A Message</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnim}>
-            <Circle />
-            <h2>Send an email.</h2>
-          </Social>
-        </Hide>
-        <Hide>
-          <Social variants={titleAnim}>
-            <Circle />
-            <h2>Social Media</h2>
-          </Social>
-        </Hide>
-      </div>
+      <Areas>
+        <ContactArea>
+          <Hide>
+            <Social variants={titleAnim}>
+              <FontAwesomeIcon icon={faGithubSquare} size="4x" />
+              <h3>github.com/xumes</h3>
+            </Social>
+          </Hide>
+          <Hide>
+            <Social variants={titleAnim}>
+              <FontAwesomeIcon icon={faLinkedin} size="4x" />
+              <h3>linkedin.com/in/reginaldosantos</h3>
+            </Social>
+          </Hide>
+          <Hide>
+            <Social variants={titleAnim}>
+              <FontAwesomeIcon icon={faYoutubeSquare} size="4x" />
+              <h3>youtube.com/c/ReginaldoSantosBR</h3>
+            </Social>
+          </Hide>
+          <Hide>
+            <Social variants={titleAnim}>
+              <FontAwesomeIcon icon={faGraduationCap} size="3x" />
+              <h3>udemy.com/user/reginaldo-marcelo-dos-santos-2</h3>
+            </Social>
+          </Hide>
+          <Hide>
+            <Social variants={titleAnim}>
+              <FontAwesomeIcon icon={faTelegram} size="4x" />
+              <h3>t.me/reginaldosantosbr</h3>
+            </Social>
+          </Hide>
+        </ContactArea>
+        <FormArea>
+          <ContactForm />
+        </FormArea>
+      </Areas>
     </ContactStyle>
   );
 };
@@ -58,26 +80,59 @@ const ContactStyle = styled(motion.div)`
     font-size: 1rem;
   }
 `;
+
 const Title = styled.div`
   margin-bottom: 4rem;
-  color: black;
+  h2 {
+    color: white;
+  }
   @media (max-width: 1500px) {
     margin-top: 5rem;
   }
 `;
+
 const Hide = styled.div`
   overflow: hidden;
 `;
+
 const Circle = styled.div`
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
   background: #353535;
 `;
+
+const Areas = styled(motion.div)`
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+`;
+
+const ContactArea = styled(motion.div)`
+
+`;
+
+const FormArea = styled(motion.div)`
+  padding: 2rem 5rem;
+  &:hover{
+
+  }
+`;
+
 const Social = styled(motion.div)`
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
-  h2 {
+  border-radius: 15px 50px;
+
+  padding-left: 2rem;
+  &:hover{
+    background: yellow;
+    cursor: pointer;
+  }
+  h3 {
+    color: grey;
     margin: 2rem;
   }
 `;

@@ -28,7 +28,7 @@ const PortfolioDetail = ({ pathId }) => {
     <>
     {pathId && (
         <CardShadow className="shadow" onClick={exitDetailHander}>
-          <Detail layoutId={pathId}>
+          <Detail layoutId={pathId.toString()}>
             <Stats>
               <div>
                 <Title layoutId={`title ${pathId}`}>{result.name}</Title>
@@ -37,7 +37,7 @@ const PortfolioDetail = ({ pathId }) => {
                  </DescriptionShort>
               </div>
               <Info>
-                <h3>Languages</h3>
+                <h3>Languages [{pathId.toString()}]</h3>
                 <Languages>
                   { result.languages && result.languages.map(language => {
                     return (

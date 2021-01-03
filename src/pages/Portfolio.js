@@ -63,6 +63,7 @@ const PortfolioList = styled(motion.div)`
     padding: 1rem 0rem;
   }
 `;
+
 const Cards = styled(motion.div)`
   min-height: 80vh;
   display: grid;
@@ -70,6 +71,7 @@ const Cards = styled(motion.div)`
   grid-column-gap: 3rem;
   grid-row-gap: 5rem;
 `;
+
 const Hide = styled.div`
   overflow: hidden;
 `;

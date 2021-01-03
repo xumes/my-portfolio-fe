@@ -19,7 +19,7 @@ const Card = ({ name, released, image, id, description }) => {
       variants={popup}
       initial="hidden"
       animate="show"
-      layoutId={stringPathId}
+      layoutId={stringPathId.toString()}
       onClick={loadDetailHandler}
     >
       <Link to={`/portfolio/${id}`}>
@@ -33,7 +33,7 @@ const Card = ({ name, released, image, id, description }) => {
           </InfoImage>
           <InfoText>
             <Title layoutId={`title ${stringPathId}`}>{name}</Title>
-            <h4>{released}</h4>
+            <h4>{released} [{stringPathId.toString()}]</h4>
             <p>{description}</p>
           </InfoText>
         </Content>
