@@ -1,7 +1,7 @@
 import React from "react";
 
-import { faGithubSquare, faLinkedin, faYoutubeSquare, faTelegram } from '@fortawesome/free-brands-svg-icons';
-import { faLaptopCode, faGraduationCap, faImages } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare, faLinkedin, faYoutubeSquare, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import ContactForm from '../components/ContactForm';
@@ -31,6 +31,9 @@ const ContactUs = () => {
         </Hide>
       </Title>
       <Areas>
+        <FormArea>
+          <ContactForm />
+        </FormArea>
         <ContactArea>
           <Hide>
             <Social variants={titleAnim} href="http://github.com/xumes" target="_blank">
@@ -58,14 +61,11 @@ const ContactUs = () => {
           </Hide>
           <Hide>
             <Social variants={titleAnim} href="http://t.me/reginaldosantosbr" target="_blank">
-              <FontAwesomeIcon icon={faTelegram} size="4x" />
+              <FontAwesomeIcon icon={faTelegramPlane} size="4x" />
               <h3>t.me/reginaldosantosbr</h3>
             </Social>
           </Hide>
         </ContactArea>
-        <FormArea>
-          <ContactForm />
-        </FormArea>
       </Areas>
     </ContactStyle>
   );
@@ -76,12 +76,15 @@ const ContactStyle = styled(motion.div)`
   color: #353535;
   min-height: 90vh;
   @media (max-width: 1500px) {
-    padding: 2rem;
-    font-size: 1rem;
+    padding: 2rem 2rem;
+    font-size: 0.5rem;
+    min-height: 0;
   }
+
 `;
 
 const Title = styled.div`
+  padding: 0rem 4rem;
   margin-bottom: 4rem;
   h2 {
     color: white;
@@ -95,28 +98,20 @@ const Hide = styled.div`
   overflow: hidden;
 `;
 
-const Circle = styled.div`
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: #353535;
-`;
-
 const Areas = styled(motion.div)`
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-column-gap: 3rem;
+  grid-row-gap: 5rem;
 `;
 
 const ContactArea = styled(motion.div)`
-
+  min-width: 40vh;
+  padding: 5rem 5rem;
 `;
 
 const FormArea = styled(motion.div)`
-  padding: 2rem 5rem;
-  &:hover{
-
-  }
+  min-width: 100vh;
 `;
 
 const Social = styled(motion.a)`

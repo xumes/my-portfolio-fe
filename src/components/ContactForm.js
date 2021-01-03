@@ -24,7 +24,7 @@ const ContactForm = () => {
 const Input = styled.div`
     display: flex;
     flex-direction: column;
-    width:600px;
+    min-width:60vh;
     label {
         color: white;
         padding-top: 1rem;
@@ -34,7 +34,7 @@ const Input = styled.div`
         padding: 12px 20px;
         border-radius: 10%;
         width: 100%;
-        height: 30px;
+        height: 100%;
     }
     input:focus {
         background-color: #416CD5;
@@ -45,7 +45,7 @@ const Input = styled.div`
         padding: 12px 20px;
         border-radius: 10%;
         width: 100%;
-        height: 30px;
+        height: 100%;
     }
     textarea {
         width: 100%;
@@ -66,6 +66,10 @@ const Input = styled.div`
 const Form = styled.form`
     button{
         margin-top: 1rem;
+    }
+    @media (max-width: 1500px) {
+        padding: 4rem;
+        font-size: 1rem;
     }
 `;
 

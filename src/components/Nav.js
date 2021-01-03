@@ -71,12 +71,15 @@ const StyledNav = styled.nav`
   #logo {
     font-size: 2rem;
     font-family: "Indie Flower", cursive;
-    font-weight: lighter;
   }
   li {
     padding-left: 10rem;
     position: relative;
     font-family: "Jura", sans-serif;
+    a{
+      font-size: 1.4rem;
+    }
+
   }
   @media (max-width: 1300px) {
     flex-direction: column;
@@ -102,7 +105,7 @@ const Line = styled(motion.div)`
   width: 0%;
   position: absolute;
   bottom: -80%;
-  left: 60%;
+  left: 55%;
   @media (max-width: 1300px) {
     left: 0%;
   }

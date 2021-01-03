@@ -94,6 +94,9 @@ const Detail = styled(motion.div)`
     width: 100%;
     object-fit: cover;
   }
+  @media (max-width: 1300px) {
+    top: 28%;
+  }
 `;
 
 const Stats = styled(motion.div)`
