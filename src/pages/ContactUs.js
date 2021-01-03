@@ -72,15 +72,9 @@ const ContactUs = () => {
 };
 
 const ContactStyle = styled(motion.div)`
-  padding: 5rem 10rem;
+  padding: 1rem 10rem;
   color: #353535;
   min-height: 90vh;
-  @media (max-width: 1500px) {
-    padding: 2rem 2rem;
-    font-size: 0.5rem;
-    min-height: 0;
-  }
-
 `;
 
 const Title = styled.div`
@@ -100,18 +94,17 @@ const Hide = styled.div`
 
 const Areas = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   grid-column-gap: 3rem;
-  grid-row-gap: 5rem;
+  grid-row-gap: 2rem;
 `;
 
 const ContactArea = styled(motion.div)`
-  min-width: 40vh;
-  padding: 5rem 5rem;
+  padding: 1rem 5rem;
 `;
 
 const FormArea = styled(motion.div)`
-  min-width: 100vh;
+  min-width: 80vh;
 `;
 
 const Social = styled(motion.a)`
@@ -131,6 +124,12 @@ const Social = styled(motion.a)`
     margin: 2rem;
   }
   color: inherit;
+  @media (max-width: 1385px) {
+    h3: {
+      font-size: 1rem;
+      background-color: blue;
+    }
+  }
 `;
 
 //Frame Animation
